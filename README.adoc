@@ -1,45 +1,49 @@
 = Lapis Stack
 
-. Build docker image
+=== Build docker image
 
-    [source,bash]
-    ----
-    docker build -t lapis .
-    ----
+[source,bash]
+----
+docker build -t lapis .
+----
 
-. Run the image
+=== Run the image
 
-    [source,bash]
-    ----
-    docker run -p 8080:8080 -v $PWD/app:/app --name api -ti lapis /bin/bash
-    ----
+[source,bash]
+----
+docker run -p 8080:8080 -v $PWD/app:/app --name api -ti lapis /bin/bash
+----
 
-. New template
+=== New template
 
-    ----
-    lapis new
-    ----
+[source,bash]
+----
+lapis new
+----
 
-. New tty from docker exec
+=== New tty from docker exec
 
-    **api can replace by container id**
+**`api` can replace by container id**
 
-    ----
-    docker exec -ti api /bin/bash
-    ----
+[source,bash]
+----
+docker exec -ti api /bin/bash
+----
 
-. Watch moonscript file and compile it
+=== Watch moonscript file and compile it
 
-    In the first time, may you need save moon file trigger compile
+In the first time, may you need save moon file trigger compile
 
-    ----
-    moonc -w .
-    ----
+[source,bash]
+----
+moonc -w .
+----
 
-. Back the first tty
+=== Back the first tty
 
-    ----
-    lapis server
-    ----
+[source,bash]
+----
+lapis server
+----
 
-. Open http://localhost:8080
+=== Open http://localhost:8080
