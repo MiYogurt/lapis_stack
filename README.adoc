@@ -1,0 +1,45 @@
+= Lapis Stack
+
+. Build docker image
+
+    [source,bash]
+    ----
+    docker build -t lapis .
+    ----
+
+. Run the image
+
+    [source,bash]
+    ----
+    docker run -p 8080:8080 -v $PWD/app:/app --name api -ti lapis /bin/bash
+    ----
+
+. New template
+
+    ----
+    lapis new
+    ----
+
+. New tty from docker exec
+
+    **api can replace by container id**
+
+    ----
+    docker exec -ti api /bin/bash
+    ----
+
+. Watch moonscript file and compile it
+
+    In the first time, may you need save moon file trigger compile
+
+    ----
+    moonc -w .
+    ----
+
+. Back the first tty
+
+    ----
+    lapis server
+    ----
+
+. Open http://localhost:8080
